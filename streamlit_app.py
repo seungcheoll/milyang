@@ -1,6 +1,5 @@
 import streamlit as st
 from openai import OpenAI
-import os
 
 # API 키 로드
 with open("api.txt", "r", encoding="utf-8") as file:
