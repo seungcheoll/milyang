@@ -2,10 +2,7 @@ import streamlit as st
 from openai import OpenAI
 
 # API 키 로드
-with open("api.txt", "r", encoding="utf-8") as file:
-    api_key = file.read().strip()[1:-1] 
-
-client = OpenAI(api_key=api_key)
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 st.set_page_config(page_title="AI 자동 작성기", layout="wide")
 
