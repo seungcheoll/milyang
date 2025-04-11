@@ -67,7 +67,7 @@ if option == "🎤 인사말씀 생성기":
         speech_result = st.session_state.get('speech_result', "아직 생성된 연설문이 없습니다.")
         st.text_area("📝 GPT가 작성한 연설문", value=speech_result, height=500, key="speech_display", disabled=True)
         if speech_result and speech_result != "아직 생성된 연설문이 없습니다.":
-            st.download_button("📥 연설문 다운로드", data=speech_result, file_name="speech.txt")
+            st.download_button("📥 연설문 다운로드", data=speech_result, file_name="연설문.txt")
 
 # ========= 보도자료 생성기 =========
 elif option == "📰 보도자료 생성기":
@@ -124,7 +124,7 @@ elif option == "📰 보도자료 생성기":
         press_result = st.session_state.get('press_result', "아직 생성된 보도자료가 없습니다.")
         st.text_area("📰 추천 제목 & 보도자료", value=press_result, height=600, key="press_display", disabled=True)
         if press_result and press_result != "아직 생성된 보도자료가 없습니다.":
-            st.download_button("📥 보도자료 다운로드", data=press_result, file_name="report.txt")
+            st.download_button("📥 보도자료 다운로드", data=press_result, file_name="보도자료.txt")
 
 # ========= 공적조서 생성기 =========
 elif option == "📁 공적조서 작성기":
@@ -188,7 +188,7 @@ elif option == "📁 공적조서 작성기":
             all_text = "\n\n".join([
                 f"[{i+1}] {title}\n{body}" for i, (title, body) in enumerate(st.session_state.confirmed_list)
             ])
-            st.download_button("📥 전체 공적조서 다운로드", data=all_text, file_name="all_merit_statements.txt")
+            st.download_button("📥 전체 공적조서 다운로드", data=all_text, file_name="공적조서.txt")
 
             if st.button("🗑️ 전체 삭제"):
                 st.session_state.confirmed_list = []
